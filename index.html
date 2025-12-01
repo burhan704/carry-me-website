@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carry Me </title>
+<link rel="shortcut icon" href="assets/converted_64x64.png" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 /* Base Styles */
@@ -15,7 +16,7 @@ body{ background: linear-gradient(135deg,#d0f0fd,#ffffff); display:flex; flex-di
 nav{ width:100%; background:#111; color:#fff; padding:12px 30px; position:sticky; top:0; z-index:1000; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,0.3); transition:0.3s; }
 nav:hover{ box-shadow:0 4px 14px rgba(0,0,0,0.5);}
 nav .logo{ display:flex; align-items:center; gap:10px;}
-nav .logo img{ height:40px; width:40px; border-radius:8px; object-fit:cover; transition:0.3s;}
+nav .logo img{ height:40px; width:50px; border-radius:8px; object-fit:cover; transition:0.3s;}
 nav .logo img:hover{ transform:rotate(-5deg) scale(1.05);}
 nav h2{ font-size:24px; font-weight:700; letter-spacing:1.2px; }
 nav .menu{ display:flex; gap:18px; align-items:center; }
@@ -42,8 +43,8 @@ nav button:hover{ background:#00a0d0; transform:scale(1.05); }
 .card h3{ font-size:20px; font-weight:700; margin:12px 0 6px; color:#111;}
 .price{ font-size:18px; font-weight:600; margin-bottom:12px; color:#00c0ff; }
 .btn{ width:48%; padding:10px 0; border:none; cursor:pointer; border-radius:10px; margin:4px 0; font-weight:700; transition:0.3s; display: inline-block; } 
-.add-btn{ background:#111; color:#00c0ff; }
-.buy-btn{ background:#00c0ff; color:#fff; }
+.add-btn{ background:#111; color:#ffffff; }
+.buy-btn{ background:#FFC107; color:#000000; }
 .add-btn:hover{ background:#333; color:#00a0d0; transform:scale(1.1); }
 .buy-btn:hover{ background:#00a0d0; transform:scale(1.1); }
 
@@ -233,13 +234,13 @@ footer i:hover{ transform:scale(1.2); color:#00c0ff; }
 emailjs.init("YBQjrNN-6dTed-6xO");
 
 const products = [
-  { id:1, name:"Women's Shoulder Underarm Bag Casual Fashionable - Black ", price:700, img: "https://i.postimg.cc/0NFK4CnQ/O1CN01j-Z9s-P41Hj-F8760PMU-2047230793-0-cib.jpg"},
+  { id:1, name:"Women's Shoulder Underarm Bag Casual Fashionable - Black ", price:650, img: "https://i.postimg.cc/0NFK4CnQ/O1CN01j-Z9s-P41Hj-F8760PMU-2047230793-0-cib.jpg"},
 
-  { id:2, name:"Women's Shoulder Underarm Bag Casual Fashionable - White with pink ", price:700, img:"https://i.postimg.cc/Cx5q44fh/O1CN01w_Ny_Kb_P1df2z_YF6U5E_2217572743762_0_cib.jpg"},
+  { id:2, name:"Women's Shoulder Underarm Bag Casual Fashionable - White with pink ", price:650, img:"https://i.postimg.cc/Cx5q44fh/O1CN01w_Ny_Kb_P1df2z_YF6U5E_2217572743762_0_cib.jpg"},
 
-  { id:3, name:"Women's Shoulder Underarm Bag Casual Fashionable - Pink  ", price:700, img:"https://i.postimg.cc/gkgJ5Dc1/O1CN015l8k-I01Hj-F86OHo-BZ-2047230793-0-cib.jpg"},
-  { id:4, name:"Women's Shoulder Underarm Bag Casual Fashionable - Green ", price:700, img:"https://i.postimg.cc/d3rCrNb3/O1CN01r4yk-A31Hj-F88Yji8d-2047230793-0-cib.jpg"},
-  { id:5, name:"Women's Shoulder Underarm Bag Casual Fashionable - White with Green ", price:700, img:"https://i.postimg.cc/7hsF1XS2/O1CN01Dl-EBYT1NO4WHCM6t-T-2201421891559-0-cib.jpg"}
+  { id:3, name:"Women's Shoulder Underarm Bag Casual Fashionable - Pink  ", price:650, img:"https://i.postimg.cc/gkgJ5Dc1/O1CN015l8k-I01Hj-F86OHo-BZ-2047230793-0-cib.jpg"},
+  { id:4, name:"Women's Shoulder Underarm Bag Casual Fashionable - Green ", price:650, img:"https://i.postimg.cc/d3rCrNb3/O1CN01r4yk-A31Hj-F88Yji8d-2047230793-0-cib.jpg"},
+  { id:5, name:"Women's Shoulder Underarm Bag Casual Fashionable - White with Green ", price:650, img:"https://i.postimg.cc/7hsF1XS2/O1CN01Dl-EBYT1NO4WHCM6t-T-2201421891559-0-cib.jpg"}
 ];
 
 let cart = [];
