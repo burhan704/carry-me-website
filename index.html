@@ -151,10 +151,32 @@ input:focus{ border-color:#00c0ff; outline:none; }
     nav button { padding:8px 15px; font-size:13px; }
 
     /* Product Grid Adjustment */
-    .products{ 
-        grid-template-columns:1fr; 
-        padding:20px; 
-    }
+  @media(max-width:768px){
+  .products{ 
+    grid-template-columns:repeat(2,1fr); 
+    gap:15px;
+    padding:15px; 
+  }
+
+  .card img{
+    height:180px;
+  }
+
+  .card h3{
+    font-size:15px;
+  }
+
+  .price{
+    font-size:14px;
+  }
+
+  .card .btn{
+    width:100%;
+    font-size:13px;
+    padding:8px 0;
+  }
+}
+
     
     /* Product Card specific adjustment to ensure full width */
     .card {
@@ -225,6 +247,60 @@ input:focus{ border-color:#00c0ff; outline:none; }
 @keyframes fadeInDown{ 0%{opacity:0; transform:translateY(-30px);} 100%{opacity:1; transform:translateY(0);} }
 @keyframes fadeInUp{ 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
 @keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;} } 
+.img-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s ease;
+  z-index:2000;
+}
+
+.img-modal.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.img-modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:14px;
+  animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(.7);}
+  to{transform:scale(1);}
+}
+.close-img{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  border:none;
+  font-size:30px;
+  font-weight:700;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+  z-index:2100;
+}
+
+.close-img:hover{
+  background:#ff4d4d;
+  transform:scale(1.1);
+}
+
 </style>
 
 </head>
@@ -277,6 +353,15 @@ input:focus{ border-color:#00c0ff; outline:none; }
 </div>
 
 <div id="toast"></div>
+
+<div class="img-modal" id="imgModal">
+  <button class="close-img" onclick="closeImage()">×</button>
+  <img id="modalImg">
+</div>
+
+
+
+
 
 <footer class="site-footer">
 
@@ -351,7 +436,8 @@ function renderProducts(){
   box.innerHTML = "";
   products.forEach(p=>{
     box.innerHTML += `<div class="card">
-      <img src="${p.img}" />
+     <img src="${p.img}" onclick="openImage('${p.img}')"/>
+
       <h3>${p.name}</h3>
       <p class="price">৳ ${p.price}</p>
       <button class="btn add-btn" onclick="addToCart(${p.id})">Add to Cart</button>
@@ -465,6 +551,16 @@ setTimeout(()=>toast.classList.remove("show"),2000);
 }
 
  
+function openImage(src){
+  const modal = document.getElementById("imgModal");
+  const img = document.getElementById("modalImg");
+  img.src = src;
+  modal.classList.add("show");
+}
+
+function closeImage(){
+  document.getElementById("imgModal").classList.remove("show");
+}
 
 
 </script>
