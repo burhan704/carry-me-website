@@ -74,12 +74,72 @@ input:focus{ border-color:#00c0ff; outline:none; }
 #toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 
 /* Footer */
-footer{ background:#111; color:#fff; padding:30px; text-align:center; font-size:14px; }
-footer a{ color:#00c0ff; margin:0 8px; text-decoration:none; font-weight:600; transition:0.3s;}
-footer a:hover{ color:#fff; text-decoration:underline; transform:scale(1.05);}
-footer .social-icons{ margin-top:10px; }
-footer i{ margin:0 5px; cursor:pointer; transition:0.3s; }
-footer i:hover{ transform:scale(1.2); color:#00c0ff; }
+.site-footer{
+  background:#0f172a;
+  color:#cbd5f5;
+  padding:60px 20px 20px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.footer-box h3,
+.footer-box h4{
+  color:#fff;
+  margin-bottom:12px;
+}
+
+.footer-box p{
+  font-size:14px;
+  line-height:1.7;
+}
+
+.site-footer .social-icons{
+  display:flex;
+  gap:12px;
+}
+
+.site-footer .social-icons img{
+  width:32px;
+  transition:.3s;
+}
+
+.site-footer .social-icons img:hover{
+  transform:scale(1.15);
+}
+
+.payment-icons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.payment-icons img{
+  height:32px;
+  background:#fff;
+  padding:4px 6px;
+  border-radius:6px;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:13px;
+  color:#94a3b8;
+}
+
+@media(max-width:600px){
+  .site-footer{text-align:center;}
+  .social-icons,.payment-icons{justify-content:center;}
+}
+
 
 /* Responsive Adjustments (FIXED for Cart and Navbar) */
 @media(max-width:768px){
@@ -218,12 +278,53 @@ footer i:hover{ transform:scale(1.2); color:#00c0ff; }
 
 <div id="toast"></div>
 
-<footer>
-  <p>Location: Dhaka, Bangladesh | Email: <a href="mailto:carryme6283@gmail.com">carryme6283@gmail.com</a></p>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/1FzQoAcmca/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f">Facebook</i></a>
-  </div>
-  <p>© Carry Me 2025 All rights reserved.</p>
+<footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-box">
+      <h3>Carry Me</h3>
+      <p>
+        Premium ladies bags & accessories.<br>
+        Style that speaks confidence.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h4>Contact</h4>
+      <p>📍 Dhaka, Bangladesh</p>
+      <p>📞 01762356101</p>
+      <p>✉️ carryme6283@gmail.com</p>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-box">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1FzQoAcmca/?mibextid=wwXIfr" target="_blank">
+          <img src="assets/facebook-logo-facebook-social-media-icon-free-png.png">
+        </a>
+      </div>
+    </div>
+
+    <!-- Payment -->
+    <div class="footer-box">
+      <h4>Payment Methods</h4>
+      <div class="payment-icons">
+        <img src="https://static.vecteezy.com/system/resources/previews/068/706/001/non_2x/bkash-logo-horizontal-bangla-mobile-banking-app-icon-free-png.png">
+        <img src="https://play-lh.googleusercontent.com/9ps_d6nGKQzfbsJfMaFR0RkdwzEdbZV53ReYCS09Eo5MV-GtVylFD-7IHcVktlnz9Mo">
+        <img src="https://static.vecteezy.com/system/resources/previews/068/706/013/non_2x/rocket-color-logo-mobile-banking-icon-free-png.png">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Carry Me. All rights reserved.
+  </div>
+
 </footer>
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
